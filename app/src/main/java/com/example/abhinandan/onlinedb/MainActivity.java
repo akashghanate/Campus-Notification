@@ -1,5 +1,6 @@
 package com.example.abhinandan.onlinedb;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,5 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         Backgroundworker bw = new Backgroundworker(this);
         bw.execute(type,username,password);
+    }
+
+    public void signup(View view){
+        startActivity(new Intent(this,Register.class));
     }
 }

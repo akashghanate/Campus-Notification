@@ -27,7 +27,46 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... voids) {
         String type = voids[0];
         String login_url = "http://circularmanagement.000webhostapp.com/login.php";
+        String register_url = "http://circularmanagement.000webhostapp.com/register.php";
         if (type.equals("login")){
+            try {
+                String user_name = voids[1];
+                String user_pass = voids[2];
+                URL url = new URL(login_url);
+                HttpURLConnection htc = (HttpURLConnection)url.openConnection();
+                if (htc==null){
+                    Toast.makeText(context,"connection failed",Toast.LENGTH_SHORT).show();
+                }
+                htc.setRequestMethod("POST");
+                htc.setDoOutput(true);
+                htc.setDoInput(true);
+                OutputStream os = htc.getOutputStream();
+                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os,"UTF-8"));
+                String post_data = URLEncoder.encode("user_name","UTF-8")+"="+URLEncoder.encode(user_name,"UTF-8")+"&"
+                        +URLEncoder.encode("user_pass","UTF-8")+"="+URLEncoder.encode(user_pass,"UTF-8");
+                bw.write(post_data);
+                bw.flush();
+                bw.close();
+                os.close();
+                InputStream is = htc.getInputStream();
+                BufferedReader br = new BufferedReader(new InputStreamReader(is,"iso-8859-1"));
+                String result = "";
+                String line = "";
+                while((line = br.readLine())!=null){
+                    result+=line;
+                }
+                br.close();
+                is.close();
+                htc.disconnect();
+                return result;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        else if(type.equals("register")){
             try {
                 String user_name = voids[1];
                 String user_pass = voids[2];

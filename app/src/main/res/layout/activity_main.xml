@@ -49,5 +49,6 @@
         android:layout_marginBottom="181dp"
         android:background="@color/colorPrimaryDark"
         android:textColor="#ffffff"
+        android:onClick="signup"
         android:text="Sign UP" />
 </RelativeLayout>
