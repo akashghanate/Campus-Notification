@@ -7,21 +7,23 @@
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="97dp"
         android:background="@color/colorAccent"
+        android:hint="Enter The User Name"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="164dp"
+        android:hint="Enter The Password"
         android:background="@color/colorAccent"
         android:ems="10"
         android:inputType="textPassword" />
@@ -30,9 +32,22 @@
         android:id="@+id/btnlogin"
         android:layout_width="203dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="240dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="onlogin"
         android:text="Login"
         android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/btnsignup"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/btnlogin"
+        android:layout_marginBottom="181dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#ffffff"
+        android:text="Sign UP" />
 </RelativeLayout>
