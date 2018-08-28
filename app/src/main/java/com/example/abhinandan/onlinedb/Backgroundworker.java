@@ -68,9 +68,9 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
         }
         else if(type.equals("register")){
             try {
-                String user_name = voids[1];
-                String user_pass = voids[2];
-                URL url = new URL(login_url);
+                String username = voids[1];
+                String password = voids[2];
+                URL url = new URL(register_url);
                 HttpURLConnection htc = (HttpURLConnection)url.openConnection();
                 if (htc==null){
                     Toast.makeText(context,"connection failed",Toast.LENGTH_SHORT).show();
@@ -80,8 +80,8 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
                 htc.setDoInput(true);
                 OutputStream os = htc.getOutputStream();
                 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os,"UTF-8"));
-                String post_data = URLEncoder.encode("user_name","UTF-8")+"="+URLEncoder.encode(user_name,"UTF-8")+"&"
-                        +URLEncoder.encode("user_pass","UTF-8")+"="+URLEncoder.encode(user_pass,"UTF-8");
+                String post_data = URLEncoder.encode("username","UTF-8")+"="+URLEncoder.encode(username,"UTF-8")+"&"
+                        +URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8");
                 bw.write(post_data);
                 bw.flush();
                 bw.close();
@@ -110,7 +110,7 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
     @Override
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Login Status");
+        alertDialog.setTitle("Status");
     }
 
     @Override
