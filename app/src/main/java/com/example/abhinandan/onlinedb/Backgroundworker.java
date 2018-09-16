@@ -70,6 +70,10 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
             try {
                 String username = voids[1];
                 String password = voids[2];
+                String semester = voids[3];
+                String branch = voids[4];
+                String section = voids[5];
+                String usn = voids[6];
                 URL url = new URL(register_url);
                 HttpURLConnection htc = (HttpURLConnection)url.openConnection();
                 if (htc==null){
@@ -81,7 +85,11 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
                 OutputStream os = htc.getOutputStream();
                 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os,"UTF-8"));
                 String post_data = URLEncoder.encode("username","UTF-8")+"="+URLEncoder.encode(username,"UTF-8")+"&"
-                        +URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8");
+                        +URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8")+"&"
+                        +URLEncoder.encode("semester","UTF-8")+"="+URLEncoder.encode(semester,"UTF-8")+"&"
+                        +URLEncoder.encode("branch","UTF-8")+"="+URLEncoder.encode(branch,"UTF-8")+"&"
+                        +URLEncoder.encode("section","UTF-8")+"="+URLEncoder.encode(section,"UTF-8")+"&"
+                        +URLEncoder.encode("usn","UTF-8")+"="+URLEncoder.encode(usn,"UTF-8");
                 bw.write(post_data);
                 bw.flush();
                 bw.close();

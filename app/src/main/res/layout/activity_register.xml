@@ -8,46 +8,88 @@
     <EditText
         android:id="@+id/etnewuser"
         android:layout_width="277dp"
-        android:background="@color/colorAccent"
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="107dp"
+        android:layout_marginTop="42dp"
+        android:background="@color/colorAccent"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Enter the new User Name"/>
+        android:hint="Enter the new User Name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etnewpass"
-        android:background="@color/colorAccent"
         android:layout_width="277dp"
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/etnewuser"
-        android:layout_marginTop="186dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="104dp"
+        android:background="@color/colorAccent"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Enter the new Password" />
+        android:hint="Enter the new Password"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etconfirmpass"
         android:layout_width="277dp"
         android:layout_height="35dp"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="165dp"
         android:background="@color/colorAccent"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Confirm The password" />
+        android:hint="Confirm The password"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btnregister"
         android:layout_width="207dp"
-        android:background="@color/colorPrimaryDark"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="135dp"
-        android:textColor="#ffffff"
+        android:layout_marginBottom="23dp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="onregister"
         android:text="Register"
-        android:onClick="onregister"/>
+        android:textColor="#ffffff" />
+
+    <Spinner
+        android:id="@+id/spinnersem"
+        android:layout_width="277dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="251dp"
+        android:background="@color/colorAccent" />
+
+    <Spinner
+        android:id="@+id/spinnerbranch"
+        android:layout_width="277dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="190dp"
+        android:background="@color/colorAccent" />
+
+    <Spinner
+        android:id="@+id/spinnersec"
+        android:layout_width="277dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
+        android:background="@color/colorAccent" />
+
+    <EditText
+        android:id="@+id/etusn"
+        android:layout_width="277dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="221dp"
+        android:background="@color/colorAccent"
+        android:hint="Enter the USN in caps"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
 </RelativeLayout>
