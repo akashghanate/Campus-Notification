@@ -1,7 +1,9 @@
 package com.example.abhinandan.onlinedb;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
@@ -20,9 +22,14 @@ import java.net.URLEncoder;
 public class Backgroundworker extends AsyncTask<String,Void,String> {
     Context context;
     AlertDialog alertDialog;
+    public static class myclass{
+        public static int flag = 0;
+    }
+
     Backgroundworker (Context ctx){
          context = ctx;
     }
+
     @Override
     protected String doInBackground(String... voids) {
         String type = voids[0];
@@ -123,8 +130,12 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String result) {
-        alertDialog.setMessage(result);
-        alertDialog.show();
+        if(result.equals("Login Successful")){
+            Toast.makeText(context,"To the nav drawer",Toast.LENGTH_SHORT).show();
+        }else{
+            alertDialog.setMessage(result);
+            alertDialog.show();
+        }
     }
 
     @Override

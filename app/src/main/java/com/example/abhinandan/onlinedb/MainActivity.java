@@ -1,14 +1,16 @@
 package com.example.abhinandan.onlinedb;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText Usernameet,Passwordet;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Passwordet = (EditText)findViewById(R.id.etPassword);
     }
 
+
     public void onlogin(View view){
         String username = Usernameet.getText().toString();
         String password = Passwordet.getText().toString();
@@ -24,9 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
         Backgroundworker bw = new Backgroundworker(this);
         bw.execute(type,username,password);
+
     }
 
     public void signup(View view){
         startActivity(new Intent(this,Register.class));
     }
+
 }
