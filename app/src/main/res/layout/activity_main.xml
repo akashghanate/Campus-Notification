@@ -32,7 +32,9 @@
         android:id="@+id/btnlogin"
         android:layout_width="203dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="170dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="onlogin"
         android:text="Login"
@@ -43,10 +45,36 @@
         android:layout_width="203dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/btnlogin"
-        android:layout_marginBottom="181dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="99dp"
         android:background="@color/colorPrimaryDark"
-        android:textColor="#ffffff"
         android:onClick="signup"
-        android:text="Sign UP" />
+        android:text="Sign UP"
+        android:textColor="#ffffff" />
+
+    <RadioGroup
+        android:layout_width="272dp"
+        android:layout_height="79dp"
+        android:id="@+id/radiogroup"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="232dp">
+
+        <RadioButton
+            android:id="@+id/radiostudent"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Login as Student"
+            android:onClick="checktheuser"/>
+
+        <RadioButton
+            android:id="@+id/radiostaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Login as Staff"
+            android:onClick="checktheuser"/>
+    </RadioGroup>
+
 </RelativeLayout>

@@ -21,12 +21,14 @@ import java.net.URLEncoder;
 
 public class Backgroundworker extends AsyncTask<String,Void,String> {
     Context context;
+    int status;
     AlertDialog alertDialog;
     public static class myclass{
         public static int flag = 0;
     }
 
-    Backgroundworker (Context ctx){
+    Backgroundworker (Context ctx,int flag){
+        status = flag;
          context = ctx;
     }
 
@@ -130,8 +132,10 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String result) {
-        if(result.equals("Login Successful")){
-            Toast.makeText(context,"To the nav drawer",Toast.LENGTH_SHORT).show();
+        if(result.equals("Login Successful") && status == 0){
+            Toast.makeText(context,"To the nav drawer of student",Toast.LENGTH_SHORT).show();
+        }else if(result.equals("Login Successful") && status == 1){
+            Toast.makeText(context,"To the nav drawer of staff",Toast.LENGTH_SHORT).show();
         }else{
             alertDialog.setMessage(result);
             alertDialog.show();

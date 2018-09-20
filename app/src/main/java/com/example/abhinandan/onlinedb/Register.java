@@ -12,6 +12,7 @@ public class Register extends AppCompatActivity {
     EditText newuser,newpass,confirmpass,newusn;
     Spinner spin,spin1,spin2;
     String user_name,user_pass,user_con,sem,branch,section,usn;
+    int status=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +52,7 @@ public class Register extends AppCompatActivity {
 
         String type = "register";
         if(user_pass.equals(user_con)) {
-            Backgroundworker bw = new Backgroundworker(this);
+            Backgroundworker bw = new Backgroundworker(this,status);
             bw.execute(type, user_name, user_pass, sem, branch, section, usn, user_con);
         }
         else{
