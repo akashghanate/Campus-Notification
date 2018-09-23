@@ -21,7 +21,9 @@
         <activity
             android:name=".Register"
             android:label="Register"></activity>
-        <activity android:name=".DrawerLayout"></activity>
+        <activity
+            android:name=".Teacherlayout"
+            android:label="Staff"></activity>
     </application>
 
 </manifest>

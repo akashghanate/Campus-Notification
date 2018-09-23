@@ -1,7 +1,9 @@
 package com.example.abhinandan.onlinedb;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -24,6 +26,10 @@ public class Register extends AppCompatActivity {
         spin1 = (Spinner)findViewById(R.id.spinnerbranch);
         spin2 = (Spinner)findViewById(R.id.spinnersec);
         newusn = (EditText)findViewById(R.id.etusn);
+
+        Toolbar toolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
+
 
         ArrayAdapter<String> myada = new ArrayAdapter<String>(Register.this,
                 android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Semester));

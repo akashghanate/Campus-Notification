@@ -3,6 +3,7 @@ package com.example.abhinandan.onlinedb;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
@@ -135,7 +136,7 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
         if(result.equals("Login Successful") && status == 0){
             Toast.makeText(context,"To the nav drawer of student",Toast.LENGTH_SHORT).show();
         }else if(result.equals("Login Successful") && status == 1){
-            Toast.makeText(context,"To the nav drawer of staff",Toast.LENGTH_SHORT).show();
+            context.startActivity(new Intent(context,Teacherlayout.class));
         }else{
             alertDialog.setMessage(result);
             alertDialog.show();
