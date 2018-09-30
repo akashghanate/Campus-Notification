@@ -38,7 +38,7 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
         String type = voids[0];
         String login_url = "http://circularmanagement.000webhostapp.com/login.php";
         String register_url = "http://circularmanagement.000webhostapp.com/register.php";
-        String message_url = "http://circularmanagement.000webhostapp.com/register.php";
+        String message_url = "http://circularmanagement.000webhostapp.com/message.php";
         if (type.equals("login")){
             try {
                 String user_name = voids[1];
@@ -125,7 +125,7 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
         }
         else if(type.equals("quick_message")){
             try {
-                String name = voids[1];
+                String names = voids[1];
                 String message = voids[2];
                 URL url = new URL(message_url);
                 HttpURLConnection htc = (HttpURLConnection)url.openConnection();
@@ -137,7 +137,7 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
                 htc.setDoInput(true);
                 OutputStream os = htc.getOutputStream();
                 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os,"UTF-8"));
-                String post_data = URLEncoder.encode("names","UTF-8")+"="+URLEncoder.encode(name,"UTF-8")+"&"
+                String post_data = URLEncoder.encode("names","UTF-8")+"="+URLEncoder.encode(names,"UTF-8")+"&"
                         +URLEncoder.encode("message","UTF-8")+"="+URLEncoder.encode(message,"UTF-8");
                 bw.write(post_data);
                 bw.flush();

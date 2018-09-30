@@ -19,7 +19,6 @@
 
     <Button
         android:id="@+id/message_button"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="156dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -27,7 +26,6 @@
         android:layout_marginBottom="194dp"
         android:background="@color/colorPrimary"
         android:text="Send"
-        android:onClick="onsend"
         android:textStyle="bold" />
 
 </RelativeLayout>
