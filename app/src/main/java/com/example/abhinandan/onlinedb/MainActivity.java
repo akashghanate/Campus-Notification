@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup rg;
     RadioButton rb1,rb2;
     int flag = 0;
+
+
+    static String name = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     public void onlogin(View view){
         String username = Usernameet.getText().toString();
         String password = Passwordet.getText().toString();
+        name = username;
         String type = "login";
 
         Backgroundworker bw = new Backgroundworker(this,flag);

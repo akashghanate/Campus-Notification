@@ -38,6 +38,7 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
         String type = voids[0];
         String login_url = "http://circularmanagement.000webhostapp.com/login.php";
         String register_url = "http://circularmanagement.000webhostapp.com/register.php";
+        String message_url = "http://circularmanagement.000webhostapp.com/register.php";
         if (type.equals("login")){
             try {
                 String user_name = voids[1];
@@ -122,6 +123,44 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
             }
 
         }
+        else if(type.equals("quick_message")){
+            try {
+                String name = voids[1];
+                String message = voids[2];
+                URL url = new URL(message_url);
+                HttpURLConnection htc = (HttpURLConnection)url.openConnection();
+                if (htc==null){
+                    Toast.makeText(context,"connection failed",Toast.LENGTH_SHORT).show();
+                }
+                htc.setRequestMethod("POST");
+                htc.setDoOutput(true);
+                htc.setDoInput(true);
+                OutputStream os = htc.getOutputStream();
+                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os,"UTF-8"));
+                String post_data = URLEncoder.encode("names","UTF-8")+"="+URLEncoder.encode(name,"UTF-8")+"&"
+                        +URLEncoder.encode("message","UTF-8")+"="+URLEncoder.encode(message,"UTF-8");
+                bw.write(post_data);
+                bw.flush();
+                bw.close();
+                os.close();
+                InputStream is = htc.getInputStream();
+                BufferedReader br = new BufferedReader(new InputStreamReader(is,"iso-8859-1"));
+                String result = "";
+                String line = "";
+                while((line = br.readLine())!=null){
+                    result+=line;
+                }
+                br.close();
+                is.close();
+                htc.disconnect();
+                return result;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
         return null;
     }
 
@@ -137,11 +176,13 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
             Toast.makeText(context,"To the nav drawer of student",Toast.LENGTH_SHORT).show();
         }else if(result.equals("Login Successful") && status == 1){
             context.startActivity(new Intent(context,Teacherlayout.class));
+        }else if(result.equals("message success")) {
+            Toast.makeText(context,"Message has been posted",Toast.LENGTH_SHORT).show();
         }else{
-            alertDialog.setMessage(result);
-            alertDialog.show();
+                alertDialog.setMessage(result);
+                alertDialog.show();
+            }
         }
-    }
 
     @Override
     protected void onProgressUpdate(Void... values) {

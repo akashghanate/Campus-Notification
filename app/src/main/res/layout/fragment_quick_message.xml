@@ -6,10 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".quick_message">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <EditText
-        android:id="@+id/message"
+        android:id="@+id/messagebox"
         android:layout_width="317dp"
         android:layout_height="166dp"
         android:layout_alignParentTop="true"
@@ -29,6 +27,7 @@
         android:layout_marginBottom="194dp"
         android:background="@color/colorPrimary"
         android:text="Send"
+        android:onClick="onsend"
         android:textStyle="bold" />
 
 </RelativeLayout>
