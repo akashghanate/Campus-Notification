@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onlogin(View view){
-        Toast.makeText(this,"login",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Login",Toast.LENGTH_SHORT).show();
         String username = Usernameet.getText().toString();
         String password = Passwordet.getText().toString();
         name = username;

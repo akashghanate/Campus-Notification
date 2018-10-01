@@ -24,6 +24,9 @@
         <activity
             android:name=".Teacherlayout"
             android:label="Staff"></activity>
+        <activity
+            android:name=".Studentlayout"
+            android:label="Student"></activity>
     </application>
 
 </manifest>

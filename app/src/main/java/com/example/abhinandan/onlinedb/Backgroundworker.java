@@ -173,7 +173,7 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String result) {
         if(result.equals("Login Successful") && status == 0){
-            Toast.makeText(context,"To the nav drawer of student",Toast.LENGTH_SHORT).show();
+            context.startActivity(new Intent(context,Studentlayout.class));
         }else if(result.equals("Login Successful") && status == 1){
             context.startActivity(new Intent(context,Teacherlayout.class));
         }else if(result.equals("message success")) {
