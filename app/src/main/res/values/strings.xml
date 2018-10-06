@@ -30,6 +30,10 @@
         <item>D</item>
     </string-array>
 
+    <string name="prompt_branch">Branch</string>
+    <string name="prompt_semes">Semester</string>
+    <string name="promplt_sec">Section</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

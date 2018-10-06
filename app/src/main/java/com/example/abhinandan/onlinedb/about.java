@@ -17,4 +17,11 @@ public class about extends android.support.v4.app.Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_about,container,false);
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((Teacherlayout) getActivity())
+                .setActionBarTitle("About Us");
+    }
 }

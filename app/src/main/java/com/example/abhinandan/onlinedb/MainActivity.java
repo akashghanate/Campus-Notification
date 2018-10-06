@@ -14,10 +14,11 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    EditText Usernameet,Passwordet;
+    EditText Usn,Passwordet;
     RadioGroup rg;
     RadioButton rb1,rb2;
     int flag = 0;
+    String author = "Student";
 
 
     static String name = "";
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.my_toolbar1);
         setSupportActionBar(toolbar);
 
-        Usernameet = (EditText)findViewById(R.id.etUsername);
+        Usn = (EditText)findViewById(R.id.etUsername);
         Passwordet = (EditText)findViewById(R.id.etPassword);
         rb1 = (RadioButton)findViewById(R.id.radiostudent);
         rb2 = (RadioButton)findViewById(R.id.radiostaff);
@@ -39,13 +40,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onlogin(View view){
         Toast.makeText(this,"Login",Toast.LENGTH_SHORT).show();
-        String username = Usernameet.getText().toString();
+        String usn = Usn.getText().toString();
         String password = Passwordet.getText().toString();
-        name = username;
+        name = usn;
         String type = "login";
 
         Backgroundworker bw = new Backgroundworker(this,flag);
-        bw.execute(type,username,password);
+        bw.execute(type,usn,password,author);
 
     }
 
@@ -59,11 +60,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.radiostudent:
                 if(checked){
                     flag = 0;
+                    author = "Student";
                 }
                 break;
             case R.id.radiostaff:
                 if(checked){
                     flag = 1;
+                    author = "Teacher";
                 }
                 break;
         }

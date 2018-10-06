@@ -41,8 +41,9 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
         String message_url = "http://circularmanagement.000webhostapp.com/message.php";
         if (type.equals("login")){
             try {
-                String user_name = voids[1];
-                String user_pass = voids[2];
+                String usn = voids[1];
+                String pass = voids[2];
+                String author = voids[3];
                 URL url = new URL(login_url);
                 HttpURLConnection htc = (HttpURLConnection)url.openConnection();
                 if (htc==null){
@@ -53,8 +54,9 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
                 htc.setDoInput(true);
                 OutputStream os = htc.getOutputStream();
                 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os,"UTF-8"));
-                String post_data = URLEncoder.encode("user_name","UTF-8")+"="+URLEncoder.encode(user_name,"UTF-8")+"&"
-                        +URLEncoder.encode("user_pass","UTF-8")+"="+URLEncoder.encode(user_pass,"UTF-8");
+                String post_data = URLEncoder.encode("usn","UTF-8")+"="+URLEncoder.encode(usn,"UTF-8")+"&"
+                        +URLEncoder.encode("pass","UTF-8")+"="+URLEncoder.encode(pass,"UTF-8")+"&"
+                        +URLEncoder.encode("author","UTF-8")+"="+URLEncoder.encode(author,"UTF-8");
                 bw.write(post_data);
                 bw.flush();
                 bw.close();
@@ -125,8 +127,11 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
         }
         else if(type.equals("quick_message")){
             try {
-                String names = voids[1];
+                String user_id = voids[1];
                 String message = voids[2];
+                String semester = voids[3];
+                String branch = voids[4];
+                String section = voids[5];
                 URL url = new URL(message_url);
                 HttpURLConnection htc = (HttpURLConnection)url.openConnection();
                 if (htc==null){
@@ -137,8 +142,11 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
                 htc.setDoInput(true);
                 OutputStream os = htc.getOutputStream();
                 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os,"UTF-8"));
-                String post_data = URLEncoder.encode("names","UTF-8")+"="+URLEncoder.encode(names,"UTF-8")+"&"
-                        +URLEncoder.encode("message","UTF-8")+"="+URLEncoder.encode(message,"UTF-8");
+                String post_data = URLEncoder.encode("user_id","UTF-8")+"="+URLEncoder.encode(user_id,"UTF-8")+"&"
+                        +URLEncoder.encode("message","UTF-8")+"="+URLEncoder.encode(message,"UTF-8")+"&"
+                        +URLEncoder.encode("semester","UTF-8")+"="+URLEncoder.encode(semester,"UTF-8")+"&"
+                        +URLEncoder.encode("branch","UTF-8")+"="+URLEncoder.encode(branch,"UTF-8")+"&"
+                        +URLEncoder.encode("section","UTF-8")+"="+URLEncoder.encode(section,"UTF-8");
                 bw.write(post_data);
                 bw.flush();
                 bw.close();

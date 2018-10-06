@@ -19,9 +19,9 @@
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="97dp"
+        android:layout_marginTop="100dp"
         android:background="@color/colorAccent"
-        android:hint="Enter The User Name"
+        android:hint="Enter The USN in Caps"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -31,7 +31,7 @@
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="160dp"
         android:hint="Enter The Password"
         android:background="@color/colorAccent"
         android:ems="10"
@@ -41,9 +41,8 @@
         android:id="@+id/btnlogin"
         android:layout_width="203dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="170dp"
+        android:layout_marginTop="330dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="onlogin"
         android:text="Login"
@@ -53,9 +52,8 @@
         android:id="@+id/btnsignup"
         android:layout_width="203dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="400dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="99dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="signup"
         android:text="Sign UP"
@@ -67,15 +65,15 @@
         android:id="@+id/radiogroup"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="232dp">
+        android:layout_marginTop="230dp">
 
         <RadioButton
             android:id="@+id/radiostudent"
-            android:layout_width="136dp"
+            android:layout_width="163dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Login as Student"
-            android:onClick="checktheuser"/>
+            android:onClick="checktheuser"
+            android:text="Login as Student" />
 
         <RadioButton
             android:id="@+id/radiostaff"

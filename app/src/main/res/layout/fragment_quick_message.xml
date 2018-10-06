@@ -9,23 +9,57 @@
     <EditText
         android:id="@+id/messagebox"
         android:layout_width="317dp"
-        android:layout_height="166dp"
+        android:layout_height="60dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="100dp"
         android:ems="10"
         android:hint="Type message here"
+        android:background="@color/colorAccent"
         android:inputType="text" />
+
+
+    <Spinner
+        android:id="@+id/quick_sem"
+        android:layout_width="317dp"
+        android:layout_height="35dp"
+        android:spinnerMode="dialog"
+        android:prompt="@string/prompt_semes"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:background="@color/colorAccent"></Spinner>
+
 
     <Button
         android:id="@+id/message_button"
         android:layout_width="156dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="194dp"
+        android:layout_marginTop="400dp"
         android:background="@color/colorPrimary"
         android:text="Send"
         android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/branch_quick"
+        android:layout_width="317dp"
+        android:layout_height="35dp"
+        android:background="@color/colorAccent"
+        android:layout_centerHorizontal="true"
+        android:prompt="@string/prompt_branch"
+        android:spinnerMode="dialog"
+        android:layout_marginTop="250dp" />
+
+    <Spinner
+        android:id="@+id/section_quick"
+        android:layout_width="317dp"
+        android:prompt="@string/promplt_sec"
+        android:layout_height="35dp"
+        android:spinnerMode="dialog"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="300dp" />
+
 
 </RelativeLayout>
