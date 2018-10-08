@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_user"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Teacher_Name" />
+
+        <TextView
+            android:id="@+id/textView_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#a9a9a9"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:text="This is a test message. Please Bear" />
+
+        <TextView
+            android:id="@+id/textView_semester"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:layout_weight="1"
+            android:text="I" />
+
+        <TextView
+            android:id="@+id/textView_branch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:layout_weight="1"
+            android:text="Computer Science Engineering" />
+
+        <TextView
+            android:id="@+id/textView_section"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:text="A"
+            android:layout_marginBottom="5dp"/>
+    </LinearLayout>
+
+</LinearLayout>

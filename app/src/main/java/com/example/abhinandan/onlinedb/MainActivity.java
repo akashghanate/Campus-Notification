@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.my_toolbar1);
         setSupportActionBar(toolbar);
+        toolbar.setTitleTextColor(0xffffff);
 
         Usn = (EditText)findViewById(R.id.etUsername);
         Passwordet = (EditText)findViewById(R.id.etPassword);
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onlogin(View view){
-        Toast.makeText(this,"Login",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Welcome User",Toast.LENGTH_SHORT).show();
         String usn = Usn.getText().toString();
         String password = Passwordet.getText().toString();
         name = usn;
