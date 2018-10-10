@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import com.example.abhinandan.onlinedb.R;
 import com.example.abhinandan.onlinedb.models.QuickmsgModel;
+
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class Quick_msg_adapter extends ArrayAdapter {
@@ -37,17 +40,20 @@ public class Quick_msg_adapter extends ArrayAdapter {
         TextView tvsemester;
         TextView tvbranch;
         TextView tvsection;
+        TextView tvdate;
         tvuser = (TextView)convertView.findViewById(R.id.textView_user);
         tvmessage = (TextView)convertView.findViewById(R.id.textView_message);
         tvsemester = (TextView)convertView.findViewById(R.id.textView_semester);
         tvbranch = (TextView)convertView.findViewById(R.id.textView_branch);
         tvsection = (TextView)convertView.findViewById(R.id.textView_section);
+        tvdate = (TextView)convertView.findViewById(R.id.textView_date);
 
         tvuser.setText(messagelist.get(position).getUser_ID());
         tvmessage.setText(messagelist.get(position).getmessage());
         tvsemester.setText("Semester :" + messagelist.get(position).getSemester1());
         tvbranch.setText("Branch :" + messagelist.get(position).getBranch1());
         tvsection.setText("Section :" + messagelist.get(position).getSection1());
+        tvdate.setText("Date of Posting :" + messagelist.get(position).getDate1());
 
         return convertView;
     }

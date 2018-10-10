@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.my_toolbar1);
         setSupportActionBar(toolbar);
-        toolbar.setTitleTextColor(0xffffff);
 
         Usn = (EditText)findViewById(R.id.etUsername);
         Passwordet = (EditText)findViewById(R.id.etPassword);

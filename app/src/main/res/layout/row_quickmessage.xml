@@ -60,8 +60,19 @@
             android:layout_weight="1"
             android:textColor="#ffffff"
             android:textSize="10sp"
-            android:text="A"
+            android:text="A" />
+
+        <TextView
+            android:id="@+id/textView_date"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:text="2018-10-10"
             android:layout_marginBottom="5dp"/>
+
     </LinearLayout>
 
 </LinearLayout>

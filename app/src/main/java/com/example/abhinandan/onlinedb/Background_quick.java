@@ -71,6 +71,7 @@ public class Background_quick extends AsyncTask<String,Void,List<QuickmsgModel>>
                     model.setSemester1(childobject.getString("Semester"));
                     model.setBranch1(childobject.getString("Branch"));
                     model.setSection1(childobject.getString("Section"));
+                    model.setDate1(childobject.getString("Date"));
                     quickmsglist.add(model);
                 }
                 br.close();

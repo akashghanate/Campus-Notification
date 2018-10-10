@@ -137,6 +137,8 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
                 String semester = voids[3];
                 String branch = voids[4];
                 String section = voids[5];
+                long millis=System.currentTimeMillis();
+                java.sql.Date date=new java.sql.Date(millis);
                 URL url = new URL(message_url);
                 HttpURLConnection htc = (HttpURLConnection)url.openConnection();
                 if (htc==null){
@@ -151,7 +153,8 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
                         +URLEncoder.encode("message","UTF-8")+"="+URLEncoder.encode(message,"UTF-8")+"&"
                         +URLEncoder.encode("semester","UTF-8")+"="+URLEncoder.encode(semester,"UTF-8")+"&"
                         +URLEncoder.encode("branch","UTF-8")+"="+URLEncoder.encode(branch,"UTF-8")+"&"
-                        +URLEncoder.encode("section","UTF-8")+"="+URLEncoder.encode(section,"UTF-8");
+                        +URLEncoder.encode("section","UTF-8")+"="+URLEncoder.encode(section,"UTF-8")+"&"
+                        +URLEncoder.encode("post_date","UTF-8")+"="+URLEncoder.encode(date.toString(),"UTF-8");
                 bw.write(post_data);
                 bw.flush();
                 bw.close();

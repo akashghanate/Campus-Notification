@@ -7,6 +7,16 @@ public class QuickmsgModel {
     public String Branch1;
     public String Section1;
 
+    public String getDate1() {
+        return date1;
+    }
+
+    public void setDate1(String date1) {
+        this.date1 = date1;
+    }
+
+    public String date1;
+
     public String getUser_ID() {
         return User_ID;
     }
