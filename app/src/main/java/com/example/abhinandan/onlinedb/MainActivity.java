@@ -27,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.my_toolbar1);
-        setSupportActionBar(toolbar);
+
 
         Usn = (EditText)findViewById(R.id.etUsername);
         Passwordet = (EditText)findViewById(R.id.etPassword);
