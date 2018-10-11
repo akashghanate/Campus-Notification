@@ -1,98 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="433dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="226dp"
+        android:background="@drawable/header" />
 
     <EditText
         android:id="@+id/etUsername"
-        android:layout_width="300dp"
-        android:layout_height="35dp"
-        android:layout_alignStart="@+id/radiogroup"
-        android:layout_marginStart="-12dp"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/radiogroup"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="191dp"
-        android:background="@color/colorAccent"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="126dp"
+        android:background="@drawable/username"
         android:ems="10"
-        android:hint="Enter The USN in Caps"
-        android:inputType="textPersonName" />
+        android:hint="USN in Caps"
+        android:inputType="textPersonName"
+        android:paddingLeft="40dp"
+        android:textColor="#2699FB"
+        android:textColorHint="#2699FB" />
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_width="300dp"
-        android:layout_height="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
-        android:background="@color/colorAccent"
+        android:layout_width="310dp"
+        android:layout_height="53dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="61dp"
+        android:background="@drawable/password"
         android:ems="10"
-        android:hint="Enter The Password"
-        android:inputType="textPassword" />
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="40dp"
+        android:textColor="#2699FB"
+        android:textColorHint="#2699FB" />
 
     <Button
         android:id="@+id/btnlogin"
-        android:layout_width="188dp"
-        android:layout_height="38dp"
+        android:layout_width="345dp"
+        android:layout_height="55dp"
         android:layout_below="@+id/radiogroup"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="96dp"
-        android:background="@color/colorPrimaryDark"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="49dp"
+        android:background="@drawable/login"
         android:onClick="onlogin"
-        android:text="Login"
         android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/btnsignup"
-        android:layout_width="190dp"
-        android:layout_height="38dp"
+        android:layout_width="345dp"
+        android:layout_height="55dp"
         android:layout_below="@+id/btnlogin"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="96dp"
-        android:background="@color/colorPrimaryDark"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="47dp"
+        android:background="@drawable/sign_up"
         android:onClick="signup"
-        android:text="Sign UP"
         android:textColor="#ffffff" />
 
     <RadioGroup
         android:id="@+id/radiogroup"
-        android:layout_width="272dp"
-        android:layout_height="79dp"
+        android:layout_width="248dp"
+        android:layout_height="51dp"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="342dp">
-
-        <RadioButton
-            android:id="@+id/radiostudent"
-            android:layout_width="163dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="checktheuser"
-            android:text="Login as Student" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="14dp">
 
         <RadioButton
             android:id="@+id/radiostaff"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="75dp"
+            android:layout_height="14dp"
             android:layout_weight="1"
             android:onClick="checktheuser"
-            android:text="Login as Staff" />
-    </RadioGroup>
+            android:text="Staff"
+            android:textColor="#fff" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="162dp"
-        android:layout_height="118dp"
-        android:layout_alignBottom="@+id/etPassword"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginBottom="128dp"
-        app:srcCompat="@drawable/login_avatar" />
+        <RadioButton
+            android:id="@+id/radiostudent"
+            android:layout_width="wrap_content"
+            android:layout_height="13dp"
+            android:layout_weight="1"
+            android:onClick="checktheuser"
+            android:text="Student"
+            android:textColor="#fff" />
+    </RadioGroup>
 
 </RelativeLayout>
