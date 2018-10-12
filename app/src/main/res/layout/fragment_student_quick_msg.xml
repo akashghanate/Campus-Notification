@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="59dp"
         android:background="@color/colorPrimary"
-        android:text="Get Info"
+        android:text="Refresh"
         android:textColor="#ffffff" />
 
 </RelativeLayout>

@@ -19,15 +19,11 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rb1,rb2;
     int flag = 0;
     String author = "Student";
-
-
     static String name = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         Usn = (EditText)findViewById(R.id.etUsername);
         Passwordet = (EditText)findViewById(R.id.etPassword);
