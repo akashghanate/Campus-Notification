@@ -109,27 +109,27 @@
         android:layout_marginTop="290dp"
         android:layout_marginBottom="153dp"
         android:background="@drawable/semester"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="4dp"
+        android:paddingRight="7dp"
+        android:paddingBottom="6dp"
         android:prompt="@string/prompt_semes"
         android:spinnerMode="dialog" />
+
 
     <Spinner
         android:id="@+id/spinnersec"
         android:layout_width="83dp"
-        android:layout_height="121dp"
-        android:layout_alignParentStart="true"
+        android:layout_height="83dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="185dp"
-        android:layout_marginTop="390dp"
-        android:layout_marginBottom="146dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="153dp"
         android:background="@drawable/section"
-        android:paddingLeft="18dp"
         android:paddingBottom="5dp"
-        android:prompt="@string/promplt_sec"
-        android:spinnerMode="dialog" />
+        android:spinnerMode="dialog"
+        android:paddingLeft="19dp"
+        />
 
     <Spinner
         android:id="@+id/spinnerbranch"
