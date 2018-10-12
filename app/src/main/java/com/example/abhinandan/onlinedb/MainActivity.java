@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup rg;
     RadioButton rb1,rb2;
     int flag = 0;
+    SharedPreferences sharedPreferences;
     String author = "Student";
     static String name = "";
     @Override
@@ -30,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
         rb1 = (RadioButton)findViewById(R.id.radiostudent);
         rb2 = (RadioButton)findViewById(R.id.radiostaff);
         rg = (RadioGroup)findViewById(R.id.radiogroup);
+
+        sharedPreferences = getSharedPreferences("MY_SHARE",MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("IsLogged",false)){
+            if(sharedPreferences.getBoolean("IsStudent",false)){
+                startActivity(new Intent(this,Studentlayout.class));
+            }else{
+                startActivity(new Intent(this,Teacherlayout.class));
+            }
+        }
+
     }
 
 

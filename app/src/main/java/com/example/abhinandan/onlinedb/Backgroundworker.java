@@ -29,6 +29,7 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
     Context context;
     int status;
     AlertDialog alertDialog;
+    SharedPreferences sp;
     public static class myclass{
         public static int flag = 0;
     }
@@ -189,8 +190,16 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String result) {
         if(result.equals("Login Successful") && status == 0){
+            sp = context.getSharedPreferences("MY_SHARE",Context.MODE_PRIVATE);
+            sp.edit().putBoolean("IsLogged",true).apply();
+            sp.edit().putBoolean("IsStudent",true).apply();
+            sp.edit().commit();
             context.startActivity(new Intent(context,Studentlayout.class));
         }else if(result.equals("Login Successful") && status == 1){
+            sp = context.getSharedPreferences("MY_SHARE",Context.MODE_PRIVATE);
+            sp.edit().putBoolean("IsLogged",true).apply();
+            sp.edit().putBoolean("IsStudent",false).apply();
+            sp.edit().commit();
             context.startActivity(new Intent(context,Teacherlayout.class));
         }else if(result.equals("message success")) {
             Toast.makeText(context,"Message has been posted",Toast.LENGTH_SHORT).show();
