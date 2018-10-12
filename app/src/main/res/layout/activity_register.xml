@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -18,91 +20,129 @@
         android:id="@+id/etnewuser"
         android:layout_width="277dp"
         android:layout_height="35dp"
+        android:layout_alignStart="@+id/etconfirmpass"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp"
-        android:background="@color/colorAccent"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/name"
         android:ems="10"
-        android:hint="Enter the First and Last Name"
-        android:inputType="textPersonName" />
+        android:hint="First and Last Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="25dp"
+        android:paddingBottom="15dp"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
 
     <EditText
         android:id="@+id/etnewpass"
         android:layout_width="277dp"
         android:layout_height="35dp"
+        android:layout_alignStart="@+id/etconfirmpass"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
-        android:background="@color/colorAccent"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="174dp"
+        android:background="@drawable/new_password"
         android:ems="10"
-        android:hint="Enter the new Password"
-        android:inputType="textPersonName" />
+        android:hint="New Password"
+        android:inputType="textPersonName"
+        android:paddingLeft="25dp"
+        android:paddingBottom="15dp"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
 
     <EditText
         android:id="@+id/etconfirmpass"
         android:layout_width="277dp"
         android:layout_height="35dp"
+        android:layout_alignStart="@+id/etusn"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="190dp"
-        android:background="@color/colorAccent"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="249dp"
+        android:background="@drawable/confirm_pass"
         android:ems="10"
-        android:hint="Confirm The password"
-        android:inputType="textPersonName" />
+        android:hint="Confirm Password"
+        android:inputType="textPersonName"
+        android:paddingLeft="25dp"
+        android:paddingBottom="15dp"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
 
-    <Button
-        android:id="@+id/btnregister"
-        android:layout_width="207dp"
-        android:layout_marginTop="470dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="23dp"
-        android:background="@color/colorPrimaryDark"
-        android:onClick="onregister"
-        android:text="Register"
-        android:textColor="#ffffff" />
-
-    <Spinner
-        android:id="@+id/spinnersem"
-        android:layout_width="277dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="290dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="211dp"
-        android:spinnerMode="dialog"
-        android:prompt="@string/prompt_semes"
-        android:background="@color/colorAccent" />
-
-    <Spinner
-        android:id="@+id/spinnerbranch"
-        android:layout_width="277dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="340dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="162dp"
-        android:spinnerMode="dialog"
-        android:prompt="@string/prompt_branch"
-        android:background="@color/colorAccent" />
-
-    <Spinner
-        android:id="@+id/spinnersec"
-        android:layout_width="277dp"
-        android:layout_height="35dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="390dp"
-        android:spinnerMode="dialog"
-        android:prompt="@string/promplt_sec"
-        android:background="@color/colorAccent" />
 
     <EditText
         android:id="@+id/etusn"
         android:layout_width="277dp"
         android:layout_height="35dp"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
-        android:layout_marginTop="240dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="324dp"
+        android:background="@drawable/usn"
         android:ems="10"
-        android:hint="Enter the USN in caps"
-        android:inputType="textPersonName" />
+        android:hint="USN in Caps"
+        android:inputType="textPersonName"
+        android:paddingLeft="25dp"
+        android:paddingBottom="15dp"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
+
+    <Button
+        android:id="@+id/btnregister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="470dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/register"
+        android:onClick="onregister"
+
+        />
+
+    <Spinner
+        android:id="@+id/spinnersem"
+        android:layout_width="83dp"
+        android:layout_height="83dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginBottom="153dp"
+        android:background="@drawable/semester"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:prompt="@string/prompt_semes"
+        android:spinnerMode="dialog" />
+
+    <Spinner
+        android:id="@+id/spinnersec"
+        android:layout_width="83dp"
+        android:layout_height="121dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="390dp"
+        android:layout_marginBottom="146dp"
+        android:background="@drawable/section"
+        android:paddingLeft="18dp"
+        android:paddingBottom="5dp"
+        android:prompt="@string/promplt_sec"
+        android:spinnerMode="dialog" />
+
+    <Spinner
+        android:id="@+id/spinnerbranch"
+        android:layout_width="334dp"
+        android:layout_height="63dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="74dp"
+        android:background="@drawable/branch"
+        android:prompt="@string/prompt_branch"
+        android:spinnerMode="dialog"
+        android:gravity="center"
+        android:textAlignment="center"/>
+
 
 </RelativeLayout>

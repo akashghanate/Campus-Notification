@@ -13,14 +13,18 @@
     </string-array>
 
     <string-array name="Branch">
-        <item>Computer Science Engineering</item>
+        <item>Aerospace Engineering</item>
+        <item>Bio-technology</item>
         <item>Chemical Engineering</item>
+        <item>Civil Engineering</item>
+        <item>Computer Science Engineering</item>
+        <item>Electronics and Communication</item>
         <item>Electronics and Instrumentation</item>
         <item>Electrical and Electronics Engineeering</item>
-        <item>Electronics and Communication</item>
-        <item>Aerospace Engineering</item>
+        <item>IEM</item>
+        <item>ISE</item>
         <item>Mechanical Engineering</item>
-        <item>Civil Engineering</item>
+        <item>Telecom</item>
     </string-array>
 
     <string-array name="Section">
