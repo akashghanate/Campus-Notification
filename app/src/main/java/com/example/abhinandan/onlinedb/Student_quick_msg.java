@@ -30,6 +30,11 @@ public class Student_quick_msg extends android.support.v4.app.Fragment implement
         button1 = (Button)views.findViewById(R.id.button_getinfo);
         context1 = container.getContext();
         button1.setOnClickListener(this);
+
+        Toast.makeText(context1,"on touched",Toast.LENGTH_SHORT).show();
+        String type = "retrieve";
+        Background_quick bw = new Background_quick(context1);
+        bw.execute(type,MainActivity.name);
         return views;
     }
 
