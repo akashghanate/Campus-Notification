@@ -60,15 +60,19 @@ public class quick_message extends android.support.v4.app.Fragment implements Vi
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.message_button:
-                Toast.makeText(context,"on clicked",Toast.LENGTH_SHORT).show();
                 String message = text1.getText().toString();
                 String sel_sem = s1.getSelectedItem().toString();
                 String sel_branch = s2.getSelectedItem().toString();
                 String sel_sec = s3.getSelectedItem().toString();
                 String type = "quick_message";
                 names = MainActivity.name;
-                Backgroundworker bw = new Backgroundworker(context,0);
-                bw.execute(type,names,message,sel_sem,sel_branch,sel_sec);
+                if(message.equals("")){
+                    Toast.makeText(context,"Please type a message",Toast.LENGTH_SHORT).show();
+
+                }else {
+                    Backgroundworker bw = new Backgroundworker(context, 0);
+                    bw.execute(type, names, message, sel_sem, sel_branch, sel_sec);
+                }
                 break;
         }
     }

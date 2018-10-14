@@ -1,5 +1,6 @@
 package com.example.abhinandan.onlinedb;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     int flag = 0;
     SharedPreferences sharedPreferences;
     String author = "Student";
+    AlertDialog alertDialog;
     static String name = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,15 +47,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onlogin(View view){
-        Toast.makeText(this,"Welcome User",Toast.LENGTH_SHORT).show();
         String usn = Usn.getText().toString();
         String password = Passwordet.getText().toString();
         name = usn;
         String type = "login";
-
-        Backgroundworker bw = new Backgroundworker(this,flag);
-        bw.execute(type,usn,password,author);
-
+        if(rg.getCheckedRadioButtonId() == -1){
+            Toast.makeText(this,"Please choose an option",Toast.LENGTH_SHORT).show();
+        }else {
+            Backgroundworker bw = new Backgroundworker(this, flag);
+            bw.execute(type, usn, password, author);
+            Toast.makeText(this,"Welcome User",Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void signup(View view){

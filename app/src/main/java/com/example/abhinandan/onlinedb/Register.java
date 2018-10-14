@@ -48,7 +48,7 @@ public class Register extends AppCompatActivity {
         spin2.setAdapter(myada2);
     }
 
-    public void onregister(View view){
+    public void onregister(View view) {
         user_name = newuser.getText().toString();
         user_pass = newpass.getText().toString();
         user_con = confirmpass.getText().toString();
@@ -58,12 +58,15 @@ public class Register extends AppCompatActivity {
         usn = newusn.getText().toString();
 
         String type = "register";
-        if(user_pass.equals(user_con)) {
-            Backgroundworker bw = new Backgroundworker(this,status);
-            bw.execute(type, user_name, user_pass, sem, branch, section, usn, user_con);
-        }
-        else{
-            Toast.makeText(this,"The two Passwords do not match",Toast.LENGTH_SHORT).show();
+        if (user_name.equals("") || user_pass.equals("") || user_con.equals("") || usn.equals("")) {
+            Toast.makeText(this,"Fields cannot be empty",Toast.LENGTH_SHORT).show();
+        }else{
+            if (user_pass.equals(user_con)) {
+                Backgroundworker bw = new Backgroundworker(this, status);
+                bw.execute(type, user_name, user_pass, sem, branch, section, usn, user_con);
+            } else {
+                Toast.makeText(this, "The two Passwords do not match", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

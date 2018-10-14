@@ -33,6 +33,8 @@ public class Studentlayout extends AppCompatActivity implements NavigationView.O
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new circular_student()).commit();
     }
 
     @Override
@@ -48,7 +50,11 @@ public class Studentlayout extends AppCompatActivity implements NavigationView.O
                 break;
 
             case R.id.nav_about_student:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new about()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new about_student()).commit();
+                break;
+
+            case R.id.nav_circular_stud:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new circular_student()).commit();
                 break;
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -77,6 +83,10 @@ public class Studentlayout extends AppCompatActivity implements NavigationView.O
                 startActivity(i);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
     }
 
 }

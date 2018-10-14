@@ -30,8 +30,6 @@ public class Student_quick_msg extends android.support.v4.app.Fragment implement
         button1 = (Button)views.findViewById(R.id.button_getinfo);
         context1 = container.getContext();
         button1.setOnClickListener(this);
-
-        Toast.makeText(context1,"on touched",Toast.LENGTH_SHORT).show();
         String type = "retrieve";
         Background_quick bw = new Background_quick(context1);
         bw.execute(type,MainActivity.name);
@@ -42,7 +40,7 @@ public class Student_quick_msg extends android.support.v4.app.Fragment implement
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button_getinfo:
-                Toast.makeText(context1,"on clicked",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context1,"Getting Quick Messages",Toast.LENGTH_SHORT).show();
                 String type = "retrieve";
                 Background_quick bw = new Background_quick(context1);
                 bw.execute(type,MainActivity.name);
@@ -51,4 +49,10 @@ public class Student_quick_msg extends android.support.v4.app.Fragment implement
 
     }
 
+    @Override
+    public void onResume() {
+        ((Studentlayout) getActivity())
+                .setActionBarTitle("Quick Messages");
+        super.onResume();
+    }
 }

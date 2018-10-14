@@ -24,6 +24,10 @@
         <item android:title="Circular">
             <menu>
                 <item
+                    android:id="@+id/nav_circular_staff"
+                    android:icon="@drawable/ic_circular"
+                    android:title="Circulars"/>
+                <item
                     android:id="@+id/nav_add"
                     android:icon="@drawable/ic_add"
                     android:title="Add Circular" />
