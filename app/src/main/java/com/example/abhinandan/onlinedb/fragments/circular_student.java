@@ -1,4 +1,4 @@
-package com.example.abhinandan.onlinedb;
+package com.example.abhinandan.onlinedb.fragments;
 
 import android.content.Context;
 import android.net.Uri;
@@ -9,6 +9,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.abhinandan.onlinedb.R;
+import com.example.abhinandan.onlinedb.Studentlayout;
 
 
 public class circular_student extends android.support.v4.app.Fragment {

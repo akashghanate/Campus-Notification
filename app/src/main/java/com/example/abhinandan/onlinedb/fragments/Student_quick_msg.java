@@ -1,23 +1,25 @@
-package com.example.abhinandan.onlinedb;
+package com.example.abhinandan.onlinedb.fragments;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.abhinandan.onlinedb.Backgroundworkerclasses.Background_quick;
+import com.example.abhinandan.onlinedb.MainActivity;
+import com.example.abhinandan.onlinedb.R;
+import com.example.abhinandan.onlinedb.Studentlayout;
 
 
 public class Student_quick_msg extends android.support.v4.app.Fragment implements View.OnClickListener{
 
-    static ListView lvmessages;
+    static public ListView lvmessages;
     View views;
     Button button1;
     Context context1;

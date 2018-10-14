@@ -1,4 +1,4 @@
-package com.example.abhinandan.onlinedb;
+package com.example.abhinandan.onlinedb.Backgroundworkerclasses;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.example.abhinandan.onlinedb.Studentlayout;
+import com.example.abhinandan.onlinedb.Teacherlayout;
 import com.example.abhinandan.onlinedb.models.QuickmsgModel;
 
 import org.json.JSONArray;
@@ -34,7 +36,7 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
         public static int flag = 0;
     }
 
-    Backgroundworker (Context ctx,int flag){
+    public Backgroundworker (Context ctx,int flag){
         status = flag;
          context = ctx;
     }

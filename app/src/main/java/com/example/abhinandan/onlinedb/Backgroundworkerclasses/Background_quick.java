@@ -1,10 +1,12 @@
-package com.example.abhinandan.onlinedb;
+package com.example.abhinandan.onlinedb.Backgroundworkerclasses;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.example.abhinandan.onlinedb.R;
+import com.example.abhinandan.onlinedb.fragments.Student_quick_msg;
 import com.example.abhinandan.onlinedb.adapters.Quick_msg_adapter;
 import com.example.abhinandan.onlinedb.models.QuickmsgModel;
 
@@ -26,7 +28,7 @@ import java.util.List;
 public class Background_quick extends AsyncTask<String,Void,List<QuickmsgModel>> {
     Context context;
     AlertDialog alertDialog;
-    Background_quick(Context ctx){
+    public Background_quick(Context ctx){
         context = ctx;
     }
     @Override

@@ -14,6 +14,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.abhinandan.onlinedb.fragments.about;
+import com.example.abhinandan.onlinedb.fragments.circular_staff;
+import com.example.abhinandan.onlinedb.fragments.quick_message;
+
 public class Teacherlayout extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout mDrawerLayout;

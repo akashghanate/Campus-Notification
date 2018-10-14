@@ -15,6 +15,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.abhinandan.onlinedb.fragments.Student_quick_msg;
+import com.example.abhinandan.onlinedb.fragments.about_student;
+import com.example.abhinandan.onlinedb.fragments.circular_student;
+
 public class Studentlayout extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
     SharedPreferences sp;

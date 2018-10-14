@@ -1,15 +1,15 @@
 package com.example.abhinandan.onlinedb;
 
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.abhinandan.onlinedb.Backgroundworkerclasses.Backgroundworker;
 
 public class Register extends AppCompatActivity {
     EditText newuser,newpass,confirmpass,newusn;

@@ -1,9 +1,7 @@
-package com.example.abhinandan.onlinedb;
+package com.example.abhinandan.onlinedb.fragments;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -14,6 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.abhinandan.onlinedb.Backgroundworkerclasses.Backgroundworker;
+import com.example.abhinandan.onlinedb.MainActivity;
+import com.example.abhinandan.onlinedb.R;
+import com.example.abhinandan.onlinedb.Teacherlayout;
 
 
 public class quick_message extends android.support.v4.app.Fragment implements View.OnClickListener {
