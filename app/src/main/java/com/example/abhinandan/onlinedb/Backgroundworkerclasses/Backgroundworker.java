@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.example.abhinandan.onlinedb.MainActivity;
 import com.example.abhinandan.onlinedb.Studentlayout;
 import com.example.abhinandan.onlinedb.Teacherlayout;
 import com.example.abhinandan.onlinedb.models.QuickmsgModel;
@@ -195,12 +196,14 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
             sp = context.getSharedPreferences("MY_SHARE",Context.MODE_PRIVATE);
             sp.edit().putBoolean("IsLogged",true).apply();
             sp.edit().putBoolean("IsStudent",true).apply();
+            sp.edit().putString("UserID",MainActivity.name).apply();
             sp.edit().commit();
             context.startActivity(new Intent(context,Studentlayout.class));
         }else if(result.equals("Login Successful") && status == 1){
             sp = context.getSharedPreferences("MY_SHARE",Context.MODE_PRIVATE);
             sp.edit().putBoolean("IsLogged",true).apply();
             sp.edit().putBoolean("IsStudent",false).apply();
+            sp.edit().putString("UserID",MainActivity.name).apply();
             sp.edit().commit();
             context.startActivity(new Intent(context,Teacherlayout.class));
         }else if(result.equals("message success")) {

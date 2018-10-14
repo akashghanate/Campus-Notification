@@ -13,11 +13,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.abhinandan.onlinedb.fragments.Student_quick_msg;
 import com.example.abhinandan.onlinedb.fragments.about_student;
 import com.example.abhinandan.onlinedb.fragments.circular_student;
+import com.example.abhinandan.onlinedb.fragments.details_student;
 
 public class Studentlayout extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
@@ -46,7 +46,7 @@ public class Studentlayout extends AppCompatActivity implements NavigationView.O
         switch (menuItem.getItemId())
         {
             case R.id.nav_details_student:
-                Toast.makeText(this,"Details",Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new details_student()).commit();
                 break;
 
             case R.id.nav_quickmessages:
