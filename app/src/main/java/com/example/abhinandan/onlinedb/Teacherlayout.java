@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.abhinandan.onlinedb.fragments.about;
 import com.example.abhinandan.onlinedb.fragments.circular_staff;
+import com.example.abhinandan.onlinedb.fragments.details_staff;
 import com.example.abhinandan.onlinedb.fragments.quick_message;
 
 public class Teacherlayout extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,7 +50,7 @@ public class Teacherlayout extends AppCompatActivity implements NavigationView.O
         switch (menuItem.getItemId())
         {
             case R.id.nav_details:
-                Toast.makeText(this,"Details",Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new details_staff()).commit();
                 break;
 
             case R.id.nav_studentdatabase:

@@ -1,6 +1,7 @@
 package com.example.abhinandan.onlinedb.fragments;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -24,6 +25,7 @@ public class quick_message extends android.support.v4.app.Fragment implements Vi
     Spinner s1,s2,s3;
     Button but1;
     View views;
+    SharedPreferences sp;
     String names;
     Context context;
     @Nullable
@@ -68,7 +70,8 @@ public class quick_message extends android.support.v4.app.Fragment implements Vi
                 String sel_branch = s2.getSelectedItem().toString();
                 String sel_sec = s3.getSelectedItem().toString();
                 String type = "quick_message";
-                names = MainActivity.name;
+                sp = context.getSharedPreferences("MY_SHARE",Context.MODE_PRIVATE);
+                names = sp.getString("UserID","");
                 if(message.equals("")){
                     Toast.makeText(context,"Please type a message",Toast.LENGTH_SHORT).show();
 
