@@ -25,17 +25,18 @@ import java.util.List;
 public class circular_student extends android.support.v4.app.Fragment {
     static public RecyclerView recyclerView;
     View views;
-    Context ctx;
+    Context context;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
          views=inflater.inflate(R.layout.fragment_circular_student,container,false);
          recyclerView= views.findViewById(R.id.recyclerView);
+         context = container.getContext();
          List<cardview_details> mlist = new ArrayList<>();
-         circular_card_adapter adapter = new circular_card_adapter(this,mlist);
+         circular_card_adapter adapter = new circular_card_adapter(context,mlist);
          mlist.add(new cardview_details(R.drawable.confirm_pass,"Akash","16-11-1998","18:12:31"));
          recyclerView.setAdapter(adapter);
-         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+         recyclerView.setLayoutManager(new LinearLayoutManager(context));
          return views;
     }
 
