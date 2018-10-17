@@ -17,8 +17,7 @@ import com.example.abhinandan.onlinedb.models.cardview_details;
 
 import java.util.List;
 
-public class circular_card_adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
-
+public class circular_card_adapter extends RecyclerView.Adapter<circular_card_adapter.myViewHolder> {
     Context mContecxt;
     List<cardview_details> mData;
     public LayoutInflater inflater;
@@ -32,16 +31,14 @@ public class circular_card_adapter extends RecyclerView.Adapter<Adapter.myViewHo
     public myViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
        inflater= LayoutInflater.from(mContecxt);
         View v = inflater.inflate(R.layout.circular_single_cardview,viewGroup,false);
-
         return new myViewHolder(v);
     }
 
-    @Override
+
     public void onBindViewHolder(myViewHolder holder, int i) {
         holder.background.setImageResource(mData.get(i).getBackground());
         holder.posting_date.setText(mData.get(i).getDate());
         holder.posting_time.setText(mData.get(i).getTime());
-
     }
 
     @Override
