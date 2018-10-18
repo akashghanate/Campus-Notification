@@ -199,6 +199,7 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
             sp.edit().putString("UserID",MainActivity.name).apply();
             sp.edit().commit();
             context.startActivity(new Intent(context,Studentlayout.class));
+            ((Activity)context).finish();
         }else if(result.equals("Login Successful") && status == 1){
             sp = context.getSharedPreferences("MY_SHARE",Context.MODE_PRIVATE);
             sp.edit().putBoolean("IsLogged",true).apply();
@@ -206,6 +207,7 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
             sp.edit().putString("UserID",MainActivity.name).apply();
             sp.edit().commit();
             context.startActivity(new Intent(context,Teacherlayout.class));
+            ((Activity)context).finish();
         }else if(result.equals("message success")) {
             Toast.makeText(context,"Message has been posted",Toast.LENGTH_SHORT).show();
         }else{

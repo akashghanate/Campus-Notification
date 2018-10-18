@@ -3,10 +3,11 @@
     package="com.example.abhinandan.onlinedb">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -16,22 +17,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity
+            android:name=".Register"
+            android:label="Register" />
+        <activity
+            android:name=".Teacherlayout"
+            android:label="Staff" />
+        <activity
+            android:name=".Studentlayout"
+            android:label="Student" />
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".Register"
-            android:label="Register"></activity>
-        <activity
-            android:name=".Teacherlayout"
-            android:label="Staff"></activity>
-        <activity
-            android:name=".Studentlayout"
-            android:label="Student"></activity>
 
+        </activity>
     </application>
 
 </manifest>

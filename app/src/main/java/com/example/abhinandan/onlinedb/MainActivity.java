@@ -37,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
         if(sharedPreferences.getBoolean("IsLogged",false)){
             if(sharedPreferences.getBoolean("IsStudent",false)){
                 startActivity(new Intent(this,Studentlayout.class));
+                MainActivity.this.finish();
             }else{
                 startActivity(new Intent(this,Teacherlayout.class));
+                MainActivity.this.finish();
             }
         }
 
