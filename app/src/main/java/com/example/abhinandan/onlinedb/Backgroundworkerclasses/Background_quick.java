@@ -61,7 +61,6 @@ public class Background_quick extends AsyncTask<String,Void,List<QuickmsgModel>>
                     result.append(line);
                 }
                 String finaljson = result.toString();
-                StringBuffer finallist = new StringBuffer();
                 JSONObject parentobject = new JSONObject(finaljson);
                 JSONArray parentarray = parentobject.getJSONArray("details");
                 List<QuickmsgModel> quickmsglist = new ArrayList<>();
@@ -90,8 +89,18 @@ public class Background_quick extends AsyncTask<String,Void,List<QuickmsgModel>>
     @Override
     protected void onPostExecute(List<QuickmsgModel> quickmsgModels) {
         super.onPostExecute(quickmsgModels);
+        alertDialog.dismiss();
         Quick_msg_adapter adapter = new Quick_msg_adapter(context,R.layout.row_quickmessage,quickmsgModels);
         Student_quick_msg.lvmessages.setAdapter(adapter);
         Student_quick_msg.lvmessages.setDivider(context.getDrawable(R.drawable.divider));
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        alertDialog = new AlertDialog.Builder(context).create();
+        alertDialog.setTitle("Status");
+        alertDialog.setMessage("Fetching Messages....");
+        alertDialog.show();
     }
 }

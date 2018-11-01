@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorAccent" />
+        android:background="#a9a9a9" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@id/card_background" />
 
     <TextView
-        android:id="@+id/teacher_name"
+        android:id="@+id/teacher_name_circular"
         android:layout_width="143dp"
         android:layout_height="26dp"
         android:layout_marginStart="28dp"
@@ -51,7 +51,7 @@
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teacher_name"
+        app:layout_constraintTop_toBottomOf="@+id/teacher_name_circular"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -66,5 +66,5 @@
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/date_circular"
-        app:layout_constraintTop_toBottomOf="@+id/teacher_name" />
+        app:layout_constraintTop_toBottomOf="@+id/teacher_name_circular" />
 </android.support.constraint.ConstraintLayout>

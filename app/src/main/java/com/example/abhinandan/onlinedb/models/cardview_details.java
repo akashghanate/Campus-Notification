@@ -1,19 +1,14 @@
 package com.example.abhinandan.onlinedb.models;
 
 
+import android.graphics.Bitmap;
 
 public class cardview_details {
-    int background;
+    Bitmap background;
     String teacher_name;
     String date;
     String time;
 
-    public cardview_details(int background,String teacher_name,String date,String time) {
-        this.background=background;
-        this.teacher_name=teacher_name;
-        this.date=date;
-        this.time=time;
-    }
 
     public String getTeacher_name() {
         return teacher_name;
@@ -39,12 +34,12 @@ public class cardview_details {
         this.time = time;
     }
 
-    public int getBackground() {
+    public Bitmap getBackground() {
         return background;
     }
 
 
-    public void setBackground(int background) {
+    public void setBackground(Bitmap background) {
         this.background = background;
     }
 }

@@ -38,6 +38,8 @@ public class Backgroundworker_upload extends AsyncTask<String,Void,String> {
                 String semeseter = voids[4];
                 String branch = voids[5];
                 String section = voids[6];
+                long millis=System.currentTimeMillis();
+                java.sql.Date date=new java.sql.Date(millis);
                 URL url = new URL(upload_url);
                 HttpURLConnection htc = (HttpURLConnection) url.openConnection();
                 if (htc == null) {
@@ -53,7 +55,8 @@ public class Backgroundworker_upload extends AsyncTask<String,Void,String> {
                         + URLEncoder.encode("title", "UTF-8") + "=" + URLEncoder.encode(title, "UTF-8") + "&"
                         + URLEncoder.encode("semester", "UTF-8") + "=" + URLEncoder.encode(semeseter, "UTF-8") + "&"
                         + URLEncoder.encode("branch", "UTF-8") + "=" + URLEncoder.encode(branch, "UTF-8") + "&"
-                        + URLEncoder.encode("section", "UTF-8") + "=" + URLEncoder.encode(section, "UTF-8");
+                        + URLEncoder.encode("section", "UTF-8") + "=" + URLEncoder.encode(section, "UTF-8") + "&"
+                        + URLEncoder.encode("date", "UTF-8") + "=" + URLEncoder.encode(date.toString(), "UTF-8");
                 bw.write(post_data);
                 bw.flush();
                 bw.close();

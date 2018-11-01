@@ -28,6 +28,10 @@
         <activity
             android:name=".Studentlayout"
             android:label="Student" />
+        <activity
+            android:name=".Popupimage"
+            android:theme="@style/AppTheme.Custom"
+            />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
