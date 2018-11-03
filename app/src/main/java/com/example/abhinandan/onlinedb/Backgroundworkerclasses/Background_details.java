@@ -1,5 +1,6 @@
 package com.example.abhinandan.onlinedb.Backgroundworkerclasses;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ public class Background_details extends AsyncTask<String,Void,JSONObject> {
 
     Context context;
     int flag_student = 0;
+    AlertDialog alertDialog;
 
     public Background_details(Context ctx){
         context = ctx;
@@ -113,9 +115,21 @@ public class Background_details extends AsyncTask<String,Void,JSONObject> {
         return null;
     }
 
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        alertDialog = new AlertDialog.Builder(context).create();
+        alertDialog.setTitle("Status");
+        alertDialog.setMessage("Fetching Details....");
+        alertDialog.show();
+
+    }
+
     @Override
     protected void onPostExecute(JSONObject childobject) {
         super.onPostExecute(childobject);
+        alertDialog.dismiss();
         if(flag_student == 1) {
             try {
                 details_student.et1.setText(childobject.getString("Name"));

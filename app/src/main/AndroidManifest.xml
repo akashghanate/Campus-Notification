@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.abhinandan.onlinedb">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,23 +16,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity
             android:name=".Register"
-            android:label="Register" />
+            android:label="Register"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Teacherlayout"
-            android:label="Staff" />
+            android:label="Staff"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Studentlayout"
-            android:label="Student" />
+            android:label="Student"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Popupimage"
             android:theme="@style/AppTheme.Custom"
+            android:screenOrientation="portrait"
             />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".SplashScreenActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
