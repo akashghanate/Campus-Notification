@@ -3,6 +3,8 @@ package com.example.abhinandan.onlinedb.Backgroundworkerclasses;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.example.abhinandan.onlinedb.R;
@@ -100,5 +102,6 @@ public class Background_retrieve extends AsyncTask<String,Void,List<DeleteCircul
         alertDialog.dismiss();
         Delete_circluar_adapter adapter = new Delete_circluar_adapter(context,R.layout.row_deletecircular,deleteCircularModels);
         delete_circular.lvcirculars.setAdapter(adapter);
+        delete_circular.lvcirculars.setOnItemClickListener(adapter);
     }
 }

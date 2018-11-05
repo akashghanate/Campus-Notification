@@ -6,13 +6,16 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.abhinandan.onlinedb.R;
 import com.example.abhinandan.onlinedb.models.DeleteCircularModel;
 import java.util.List;
 
-public class Delete_circluar_adapter extends ArrayAdapter {
+public class Delete_circluar_adapter extends ArrayAdapter implements AdapterView.OnItemClickListener {
     public List<DeleteCircularModel> dcm;
     public LayoutInflater layoutInflater;
     int resource;
@@ -41,5 +44,11 @@ public class Delete_circluar_adapter extends ArrayAdapter {
         dateofposting.setText("Date Of Posting : " + dcm.get(position).getDate_of_post());
 
         return convertView;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        String title = dcm.get(i).getCirulartitle();
+        Toast.makeText(ctx, title, Toast.LENGTH_SHORT).show();
     }
 }
