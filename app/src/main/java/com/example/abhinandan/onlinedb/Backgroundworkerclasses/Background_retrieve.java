@@ -92,6 +92,7 @@ public class Background_retrieve extends AsyncTask<String,Void,List<DeleteCircul
         super.onPreExecute();
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Status");
+        alertDialog.setCancelable(false);
         alertDialog.setMessage("Fetching Circulars List....");
         alertDialog.show();
     }

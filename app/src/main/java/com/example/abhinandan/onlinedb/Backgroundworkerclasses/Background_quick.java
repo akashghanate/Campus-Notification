@@ -100,6 +100,7 @@ public class Background_quick extends AsyncTask<String,Void,List<QuickmsgModel>>
         super.onPreExecute();
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Status");
+        alertDialog.setCancelable(false);
         alertDialog.setMessage("Fetching Messages....");
         alertDialog.show();
     }

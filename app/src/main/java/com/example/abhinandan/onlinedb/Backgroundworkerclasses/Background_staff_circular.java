@@ -99,6 +99,7 @@ public class Background_staff_circular extends AsyncTask<String,Void,List<cardvi
         super.onPreExecute();
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Status");
+        alertDialog.setCancelable(false);
         alertDialog.setMessage("Fetching Circulars....");
         alertDialog.show();
     }

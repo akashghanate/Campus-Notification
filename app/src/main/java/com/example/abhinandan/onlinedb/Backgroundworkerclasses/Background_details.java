@@ -121,6 +121,7 @@ public class Background_details extends AsyncTask<String,Void,JSONObject> {
         super.onPreExecute();
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Status");
+        alertDialog.setCancelable(false);
         alertDialog.setMessage("Fetching Details....");
         alertDialog.show();
 

@@ -114,6 +114,7 @@ public class Background_download extends AsyncTask<String,Void,List<cardview_det
         super.onPreExecute();
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Status");
+        alertDialog.setCancelable(false);
         alertDialog.setMessage("Fetching Circulars....");
         alertDialog.show();
     }
