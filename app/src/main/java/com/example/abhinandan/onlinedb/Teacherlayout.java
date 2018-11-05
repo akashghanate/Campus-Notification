@@ -19,6 +19,7 @@ import com.example.abhinandan.onlinedb.fragments.add_circular;
 import com.example.abhinandan.onlinedb.fragments.circular_staff;
 import com.example.abhinandan.onlinedb.fragments.details_staff;
 import com.example.abhinandan.onlinedb.fragments.quick_message;
+import com.example.abhinandan.onlinedb.fragments.delete_circular;
 
 public class Teacherlayout extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -64,7 +65,7 @@ public class Teacherlayout extends AppCompatActivity implements NavigationView.O
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new add_circular()).commit();
                 break;
             case R.id.nav_remove:
-                Toast.makeText(this,"Delete Circular",Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new delete_circular()).commit();
                 break;
             case R.id.nav_msg:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new quick_message()).commit();
