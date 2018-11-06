@@ -20,6 +20,7 @@ import com.example.abhinandan.onlinedb.fragments.circular_staff;
 import com.example.abhinandan.onlinedb.fragments.details_staff;
 import com.example.abhinandan.onlinedb.fragments.quick_message;
 import com.example.abhinandan.onlinedb.fragments.delete_circular;
+import com.example.abhinandan.onlinedb.fragments.student_database;
 
 public class Teacherlayout extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -54,9 +55,8 @@ public class Teacherlayout extends AppCompatActivity implements NavigationView.O
             case R.id.nav_details:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new details_staff()).commit();
                 break;
-
             case R.id.nav_studentdatabase:
-                Toast.makeText(this,"Database",Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new student_database()).commit();
                 break;
             case R.id.nav_about:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new about()).commit();

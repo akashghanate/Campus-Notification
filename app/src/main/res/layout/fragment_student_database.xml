@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tvheading1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="Select a Batch"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/sd_sem"
+        android:layout_width="317dp"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/sd_branch"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
+        android:background="@color/colorAccent"
+        android:prompt="@string/prompt_semes"
+        android:spinnerMode="dialog" />
+
+    <Spinner
+        android:id="@+id/sd_branch"
+        android:layout_width="317dp"
+        android:layout_height="35dp"
+        android:background="@color/colorAccent"
+        android:layout_centerHorizontal="true"
+        android:prompt="@string/prompt_branch"
+        android:spinnerMode="dialog"
+        android:layout_marginTop="120dp" />
+
+    <Spinner
+        android:id="@+id/sd_section"
+        android:layout_width="317dp"
+        android:prompt="@string/promplt_sec"
+        android:layout_height="35dp"
+        android:spinnerMode="dialog"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="170dp" />
+
+    <Button
+        android:id="@+id/getdb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="41dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Get List"
+        android:textStyle="bold" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/lvstudentlist"
+        android:layout_marginRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
+        android:layout_marginBottom="117dp" />
+    <TextView
+        android:id="@+id/empty"
+        android:text="No Records Found"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible"
+        style="@android:style/TextAppearance.Large"
+        android:gravity="center"/>
+
+</RelativeLayout>
