@@ -19,9 +19,8 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rb1,rb2;
     int flag = 0;
     SharedPreferences sharedPreferences;
-    String author = "Student";
-    AlertDialog alertDialog;
-    static public String name = "";
+    String author = "Student";                                  //identify the login type
+    static public String name = "";                             //used to set the username on successful login
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
         rb2 = (RadioButton)findViewById(R.id.radiostaff);
         rg = (RadioGroup)findViewById(R.id.radiogroup);
 
-        sharedPreferences = getSharedPreferences("MY_SHARE",MODE_PRIVATE);
-        if(sharedPreferences.getBoolean("IsLogged",false)){
-            if(sharedPreferences.getBoolean("IsStudent",false)){
-                startActivity(new Intent(this,Studentlayout.class));
+        sharedPreferences = getSharedPreferences("MY_SHARE",MODE_PRIVATE);                 //This part is used to keep the
+        if(sharedPreferences.getBoolean("IsLogged",false)){                                //user logged in. Redirects the
+            if(sharedPreferences.getBoolean("IsStudent",false)){                           //to specified acreen based on
+                startActivity(new Intent(this,Studentlayout.class));               //login
                 MainActivity.this.finish();
             }else{
                 startActivity(new Intent(this,Teacherlayout.class));
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onlogin(View view){
-        String usn = Usn.getText().toString();
+        String usn = Usn.getText().toString();                                  //method executed when user presses login buttton
         String password = Passwordet.getText().toString();
         name = usn;
         String type = "login";
@@ -62,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void signup(View view){
-        startActivity(new Intent(this,Register.class));
+        startActivity(new Intent(this,Register.class));                     //when user presses signup login
     }
 
-    public void checktheuser(View view){
-        boolean checked = ((RadioButton)view).isChecked();
+    public void checktheuser(View view){                                                //check whether atleast one of the
+        boolean checked = ((RadioButton)view).isChecked();                              //radio buttons is selected
         switch(view.getId()){
             case R.id.radiostudent:
                 if(checked){

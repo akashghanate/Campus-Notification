@@ -31,7 +31,6 @@ public class Register extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
 
-
         ArrayAdapter<String> myada = new ArrayAdapter<String>(Register.this,
                 android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Semester));
         myada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

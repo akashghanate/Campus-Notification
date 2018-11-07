@@ -35,6 +35,7 @@ public class Student_quick_msg extends android.support.v4.app.Fragment implement
         String type = "retrieve";
         Background_quick bw = new Background_quick(context1);
         bw.execute(type,MainActivity.name);
+        lvmessages.setEmptyView(views.findViewById(R.id.empty1));
         return views;
     }
 

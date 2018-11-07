@@ -28,5 +28,14 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"/>
 
+    <TextView
+        android:id="@+id/empty2"
+        android:text="No Records Found"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible"
+        style="@android:style/TextAppearance.Large"
+        android:gravity="center"/>
+
 
 </RelativeLayout>

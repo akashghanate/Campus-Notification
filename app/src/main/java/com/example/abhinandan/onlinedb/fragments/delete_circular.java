@@ -36,7 +36,7 @@ public class delete_circular extends android.support.v4.app.Fragment {
         String type = "del_retrieve";
         Background_retrieve br = new Background_retrieve(context);
         br.execute(type,usn);
-
+        lvcirculars.setEmptyView(views.findViewById(R.id.empty2));
         return views;
     }
 
