@@ -11,7 +11,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="10dp"
-        android:background="@color/darkgray"
+        android:background="@color/lightblue"
         android:id="@+id/imagechoosefile" />
 
     <Button
@@ -23,7 +23,7 @@
         android:layout_marginEnd="41dp"
         android:layout_marginBottom="464dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Choose Image File"
+        android:text="Choose Image"
         android:textColor="@color/colorPrimary" />
 
     <TextView
@@ -34,6 +34,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="358dp"
         android:text="PDF File will be selected here"
+        android:textColor="@color/colorPrimaryDark"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -46,7 +47,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="296dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Choose pdf file"
+        android:text="Choose pdf"
         android:textColor="@color/colorPrimary" />
 
     <Button
@@ -57,7 +58,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Upload the Chosen File"
+        android:text="Upload"
         android:textColor="@color/colorPrimary" />
 
     <Spinner
@@ -67,7 +68,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="350dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/dropdown"
         android:prompt="@string/prompt_semes"
         android:spinnerMode="dialog"></Spinner>
 
@@ -78,7 +79,7 @@
         android:layout_height="35dp"
         android:layout_marginTop="400dp"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
+        android:background="@drawable/dropdown"
         android:prompt="@string/prompt_branch"
         android:spinnerMode="dialog" />
 
@@ -89,7 +90,7 @@
         android:layout_alignEnd="@+id/tvchoosepdf"
         android:layout_marginTop="450dp"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
+        android:background="@drawable/dropdown"
         android:prompt="@string/promplt_sec"
         android:spinnerMode="dialog" />
 
@@ -102,7 +103,7 @@
         android:layout_marginTop="284dp"
         android:layout_marginEnd="52dp"
         android:ems="10"
-        android:hint="Enter the title of selected image"
+        android:hint="Description for Circular"
         android:inputType="textPersonName" />
 
 
