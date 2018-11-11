@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("MY_SHARE",MODE_PRIVATE);                 //This part is used to keep the
         if(sharedPreferences.getBoolean("IsLogged",false)){                                //user logged in. Redirects the
-            if(sharedPreferences.getBoolean("IsStudent",false)){                           //to specified acreen based on
+            if(sharedPreferences.getBoolean("IsStudent",false)){                           //to specified screen based on
                 startActivity(new Intent(this,Studentlayout.class));               //login
                 MainActivity.this.finish();
             }else{

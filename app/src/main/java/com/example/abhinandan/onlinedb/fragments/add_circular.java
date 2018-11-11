@@ -35,8 +35,8 @@ import static android.app.Activity.RESULT_OK;
 
 
 public class add_circular extends android.support.v4.app.Fragment implements View.OnClickListener {
-    ImageView imageView;
-    EditText et;
+    static public ImageView imageView;
+    static public EditText et;
     String encodedimage;
     SharedPreferences sp;
     Button b1,b2,b3;
@@ -54,13 +54,10 @@ public class add_circular extends android.support.v4.app.Fragment implements Vie
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         views = inflater.inflate(R.layout.fragment_add_circular,container,false);
         imageView = (ImageView) views.findViewById(R.id.imagechoosefile);
-        tv1 = (TextView)views.findViewById(R.id.tvchoosepdf);
         b1 = (Button)views.findViewById(R.id.choosefile);
-        b2 = (Button)views.findViewById(R.id.choosepdf);
         b3 = (Button)views.findViewById(R.id.upload);
         et = (EditText)views.findViewById(R.id.ettitle);
         b1.setOnClickListener(this);
-        b2.setOnClickListener(this);
         b3.setOnClickListener(this);
         s1 = (Spinner)views.findViewById(R.id.chosen_sem);
         s2 = (Spinner)views.findViewById(R.id.chosen_branch);
@@ -91,9 +88,6 @@ public class add_circular extends android.support.v4.app.Fragment implements Vie
         switch (view.getId()){
             case R.id.choosefile:
                 opengallery();
-                break;
-            case R.id.choosepdf:
-                selectpdf();
                 break;
             case R.id.upload:
                 Bitmap image = ((BitmapDrawable)imageView.getDrawable()).getBitmap();

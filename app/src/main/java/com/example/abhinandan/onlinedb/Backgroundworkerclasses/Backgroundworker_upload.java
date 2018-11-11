@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
+import com.example.abhinandan.onlinedb.fragments.add_circular;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -84,6 +85,9 @@ public class Backgroundworker_upload extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String s) {
+        add_circular.imageView.setImageResource(0);
+        add_circular.et.setText("");
+        alertDialog.setCancelable(true);
         alertDialog.setMessage("Upload Successful");
         alertDialog.show();
         super.onPostExecute(s);
@@ -94,6 +98,7 @@ public class Backgroundworker_upload extends AsyncTask<String,Void,String> {
         super.onPreExecute();
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Status");
+        alertDialog.setCancelable(false);
         alertDialog.setMessage("Uploading....");
         alertDialog.show();
     }
