@@ -23,7 +23,7 @@
         android:layout_alignStart="@+id/sd_branch"
         android:layout_alignParentTop="true"
         android:layout_marginTop="70dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/dropdown"
         android:prompt="@string/prompt_semes"
         android:spinnerMode="dialog" />
 
@@ -31,7 +31,7 @@
         android:id="@+id/sd_branch"
         android:layout_width="317dp"
         android:layout_height="35dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/dropdown"
         android:layout_centerHorizontal="true"
         android:prompt="@string/prompt_branch"
         android:spinnerMode="dialog"
@@ -44,7 +44,7 @@
         android:layout_height="35dp"
         android:spinnerMode="dialog"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
+        android:background="@drawable/dropdown"
         android:layout_marginTop="170dp" />
 
     <Button
@@ -56,12 +56,13 @@
         android:layout_marginBottom="41dp"
         android:background="@color/colorPrimaryDark"
         android:text="Get List"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/white"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
         android:id="@+id/lvstudentlist"
