@@ -19,6 +19,7 @@ import com.example.abhinandan.onlinedb.adapters.circular_card_adapter;
 import com.example.abhinandan.onlinedb.interfaces.onclickinterface;
 import com.example.abhinandan.onlinedb.models.cardview_details;
 import com.example.abhinandan.onlinedb.fragments.circular_staff;
+import com.example.abhinandan.onlinedb.fragments.circular_admin;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,9 +38,11 @@ import java.util.List;
 public class Background_staff_circular extends AsyncTask<String,Void,List<cardview_details>> {
 
     Context context;
+    int flag;
     AlertDialog alertDialog;
-    public Background_staff_circular(Context ctx){
+    public Background_staff_circular(Context ctx,int flag){
         this.context = ctx;
+        this.flag = flag;
     }
     @Override
     protected List<cardview_details> doInBackground(String... voids) {
@@ -118,7 +121,12 @@ public class Background_staff_circular extends AsyncTask<String,Void,List<cardvi
                 context.startActivity(new Intent(context,Popupimage.class));
             }
         });
-        circular_staff.recyclerView2.setAdapter(adapter);
-        circular_staff.recyclerView2.setLayoutManager(new LinearLayoutManager(context));
+        if(flag == 0) {
+            circular_staff.recyclerView2.setAdapter(adapter);
+            circular_staff.recyclerView2.setLayoutManager(new LinearLayoutManager(context));
+        }else if(flag == 1){
+            circular_admin.recyclerView3.setAdapter(adapter);
+            circular_admin.recyclerView3.setLayoutManager(new LinearLayoutManager(context));
+        }
     }
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/selectastaff"
+        android:text="Select a Staff Name"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:id="@+id/spinner_report"
+        android:layout_width="317dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/dropdown"
+        android:prompt="@string/promplt_staff"
+        android:spinnerMode="dialog" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:id="@+id/buttongetreport"
+        android:padding="1dp"
+        android:text="Get No of Circulars"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryDark"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:padding="5dp"
+        android:id="@+id/nocirculars"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="300dp"
+        android:layout_centerHorizontal="true"
+        android:hint="No of Circulars will be displayed here"
+        android:textColor="#fff"/>
+
+
+</RelativeLayout>

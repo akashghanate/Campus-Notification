@@ -12,22 +12,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.abhinandan.onlinedb.AdminLayout;
 import com.example.abhinandan.onlinedb.Backgroundworkerclasses.Background_staff_circular;
 import com.example.abhinandan.onlinedb.R;
-import com.example.abhinandan.onlinedb.Teacherlayout;
 
 
-public class circular_staff extends android.support.v4.app.Fragment {
-    static public RecyclerView recyclerView2;
+public class circular_admin extends android.support.v4.app.Fragment {
+    static public RecyclerView recyclerView3;
     View views;
+    int flag = 1;
     Context context;
-    int flag = 0;
     SharedPreferences sp;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         views = inflater.inflate(R.layout.fragment_circular_staff,container,false);
-        recyclerView2 = (RecyclerView)views.findViewById(R.id.recyclerView2);
+        recyclerView3 = (RecyclerView)views.findViewById(R.id.recyclerView2);
         context = container.getContext();
 
         String type = "download_staff";
@@ -35,15 +35,15 @@ public class circular_staff extends android.support.v4.app.Fragment {
         String usn = sp.getString("UserID","");
         Background_staff_circular bsc = new Background_staff_circular(context,flag);
         bsc.execute(type,usn);
-
         return views;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        ((Teacherlayout) getActivity())
+        ((AdminLayout) getActivity())
                 .setActionBarTitle("Circulars");
     }
+
 
 }
