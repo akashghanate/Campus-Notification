@@ -36,6 +36,7 @@ import static android.app.Activity.RESULT_OK;
 
 public class add_circular extends android.support.v4.app.Fragment implements View.OnClickListener {
     static public ImageView imageView;
+    int flag = 0;
     static public EditText et;
     String encodedimage;
     SharedPreferences sp;
@@ -90,11 +91,15 @@ public class add_circular extends android.support.v4.app.Fragment implements Vie
                 opengallery();
                 break;
             case R.id.upload:
-                Bitmap image = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
-                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                image.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
-                encodedimage = Base64.encodeToString(byteArrayOutputStream.toByteArray(),Base64.DEFAULT);
-                uploadthefile();
+                if(flag == 0 ||  et.getText().equals("") ){
+                    Toast.makeText(context,"Please Check the options",Toast.LENGTH_SHORT).show();
+                }else {
+                    Bitmap image = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                    image.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                    encodedimage = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
+                    uploadthefile();
+                }
                 break;
         }
     }
@@ -119,6 +124,7 @@ public class add_circular extends android.support.v4.app.Fragment implements Vie
                 imageuri = data.getData();
                 imageView.setImageURI(imageuri);
                 imagesel = 1;
+                flag = 1;
             }
         }
         if(resultCode == RESULT_OK && requestCode == READ_PDF){
