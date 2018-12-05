@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Onlinedb</string>
     <string name="action_logout">Log Out</string>
+    <string name="usn">USN</string>
 
     <string-array name="Semester">
         <item>I</item>
