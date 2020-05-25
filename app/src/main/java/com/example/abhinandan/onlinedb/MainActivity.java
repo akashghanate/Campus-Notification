@@ -16,7 +16,7 @@ import com.example.abhinandan.onlinedb.Backgroundworkerclasses.Backgroundworker;
 public class MainActivity extends AppCompatActivity {
     EditText Usn,Passwordet;
     RadioGroup rg;
-    RadioButton rb1,rb2;
+    RadioButton rb1,rb2,rb3;
     int flag = 0;
     SharedPreferences sharedPreferences;
     String author = "Student";                                  //identify the login type
@@ -30,11 +30,12 @@ public class MainActivity extends AppCompatActivity {
         Passwordet = (EditText)findViewById(R.id.etPassword);
         rb1 = (RadioButton)findViewById(R.id.radiostudent);
         rb2 = (RadioButton)findViewById(R.id.radiostaff);
+        rb3 = (RadioButton)findViewById(R.id.radioadmin);
         rg = (RadioGroup)findViewById(R.id.radiogroup);
 
         sharedPreferences = getSharedPreferences("MY_SHARE",MODE_PRIVATE);                 //This part is used to keep the
         if(sharedPreferences.getBoolean("IsLogged",false)){                                //user logged in. Redirects the
-            if(sharedPreferences.getBoolean("IsStudent",false)){                           //to specified acreen based on
+            if(sharedPreferences.getBoolean("IsStudent",false)){                           //to specified screen based on
                 startActivity(new Intent(this,Studentlayout.class));               //login
                 MainActivity.this.finish();
             }else{
@@ -79,6 +80,11 @@ public class MainActivity extends AppCompatActivity {
                     author = "Teacher";
                 }
                 break;
+            case R.id.radioadmin:
+                if(checked){
+                    flag = 2;
+                    author = "Admin";
+                }
         }
     }
 

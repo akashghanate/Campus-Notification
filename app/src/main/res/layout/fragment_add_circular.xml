@@ -6,48 +6,26 @@
 
 
     <ImageView
-        android:layout_width="150dp"
+        android:id="@+id/imagechoosefile"
+        android:layout_width="300dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/darkgray"
-        android:id="@+id/imagechoosefile" />
+        android:background="@color/darkgray" />
 
     <Button
         android:id="@+id/choosefile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="464dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="314dp"
         android:background="@color/colorPrimaryDark"
         android:text="Choose Image File"
         android:textColor="@color/colorPrimary" />
 
-    <TextView
-        android:id="@+id/tvchoosepdf"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/chosen_sem"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="358dp"
-        android:text="PDF File will be selected here"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/choosepdf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="296dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="Choose pdf file"
-        android:textColor="@color/colorPrimary" />
 
     <Button
         android:id="@+id/upload"
@@ -86,7 +64,6 @@
         android:id="@+id/chosen_section"
         android:layout_width="317dp"
         android:layout_height="35dp"
-        android:layout_alignEnd="@+id/tvchoosepdf"
         android:layout_marginTop="450dp"
         android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"
@@ -97,8 +74,8 @@
         android:id="@+id/ettitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/tvchoosepdf"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="284dp"
         android:layout_marginEnd="52dp"
         android:ems="10"

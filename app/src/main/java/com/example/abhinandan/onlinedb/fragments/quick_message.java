@@ -21,7 +21,7 @@ import com.example.abhinandan.onlinedb.Teacherlayout;
 
 
 public class quick_message extends android.support.v4.app.Fragment implements View.OnClickListener {
-    EditText text1;
+    static public EditText text1;
     Spinner s1,s2,s3;
     Button but1;
     View views;

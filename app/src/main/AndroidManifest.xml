@@ -27,6 +27,9 @@
             android:name=".Teacherlayout"
             android:label="Staff"
             android:screenOrientation="portrait" />
+        <activity android:name=".AdminLayout"
+            android:label="Admin"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Studentlayout"
             android:label="Student"

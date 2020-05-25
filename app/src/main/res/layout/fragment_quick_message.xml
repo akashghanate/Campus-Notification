@@ -15,7 +15,7 @@
         android:layout_marginTop="100dp"
         android:ems="10"
         android:hint="Type message here"
-        android:background="@color/colorAccent"
+        android:background="@color/lightblue"
         android:inputType="text" />
 
 
@@ -28,7 +28,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
-        android:background="@color/colorAccent"></Spinner>
+        android:background="@drawable/dropdown"></Spinner>
 
 
     <Button
@@ -37,15 +37,16 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="400dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimaryDark"
         android:text="Send"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
     <Spinner
         android:id="@+id/branch_quick"
         android:layout_width="317dp"
         android:layout_height="35dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/dropdown"
         android:layout_centerHorizontal="true"
         android:prompt="@string/prompt_branch"
         android:spinnerMode="dialog"
@@ -58,7 +59,7 @@
         android:layout_height="35dp"
         android:spinnerMode="dialog"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
+        android:background="@drawable/dropdown"
         android:layout_marginTop="300dp" />
 
 

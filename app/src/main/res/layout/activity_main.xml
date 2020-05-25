@@ -135,6 +135,15 @@
             android:onClick="checktheuser"
             android:text="Student"
             android:textColor="#000" />
+
+        <RadioButton
+            android:id="@+id/radioadmin"
+            android:layout_width="124dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:onClick="checktheuser"
+            android:text="Admin"
+            android:textColor="#000"/>
     </RadioGroup>
 
     <ImageView

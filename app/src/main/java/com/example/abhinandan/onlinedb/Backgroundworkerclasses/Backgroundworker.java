@@ -8,13 +8,11 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.example.abhinandan.onlinedb.AdminLayout;
 import com.example.abhinandan.onlinedb.MainActivity;
 import com.example.abhinandan.onlinedb.Studentlayout;
 import com.example.abhinandan.onlinedb.Teacherlayout;
-import com.example.abhinandan.onlinedb.models.QuickmsgModel;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
+import com.example.abhinandan.onlinedb.fragments.quick_message;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -30,7 +28,7 @@ import java.net.URLEncoder;
 
 public class Backgroundworker extends AsyncTask<String,Void,String> {
     Context context;
-    int status;
+    int status,notinternet;
     AlertDialog alertDialog;
     SharedPreferences sp;
     public static class myclass{
@@ -173,6 +171,9 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
                 br.close();
                 is.close();
                 htc.disconnect();
+                if(result == null){
+                    notinternet = 1;
+                }
                 return result;
             } catch (MalformedURLException e) {
                 e.printStackTrace();
@@ -188,10 +189,14 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Status");
+        alertDialog.setCancelable(false);
+        alertDialog.setMessage("Please wait....");
+        alertDialog.show();
     }
 
     @Override
     protected void onPostExecute(String result) {
+        alertDialog.setCancelable(true);
         if(result.equals("Login Successful") && status == 0){
             sp = context.getSharedPreferences("MY_SHARE",Context.MODE_PRIVATE);
             sp.edit().putBoolean("IsLogged",true).apply();
@@ -208,9 +213,22 @@ public class Backgroundworker extends AsyncTask<String,Void,String> {
             sp.edit().commit();
             context.startActivity(new Intent(context,Teacherlayout.class));
             ((Activity)context).finish();
-        }else if(result.equals("message success")) {
+        }
+        else if(result.equals("Login Successful") && status == 2){
+            sp = context.getSharedPreferences("MY_SHARE",Context.MODE_PRIVATE);
+            sp.edit().putBoolean("IsLogged",false).apply();
+            sp.edit().putBoolean("IsStudent",false).apply();
+            sp.edit().putString("UserID",MainActivity.name).apply();
+            sp.edit().commit();
+            context.startActivity(new Intent(context,AdminLayout.class));
+            ((Activity)context).finish();
+        } else if(result.equals("message success")) {
+            quick_message.text1.setText("");
             Toast.makeText(context,"Message has been posted",Toast.LENGTH_SHORT).show();
-        }else{
+        }else if(notinternet == 1){
+            Toast.makeText(context,"Unable to Connect",Toast.LENGTH_SHORT).show();
+        }
+        else{
                 alertDialog.setMessage(result);
                 alertDialog.show();
             }
